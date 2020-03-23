@@ -1,0 +1,326 @@
+/*
+ * FONTS
+*/
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/ebgaramond08-italic.woff2') format('woff2'),
+         url('../fonts/ebgaramond08-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/ebgaramond08-regular.woff2') format('woff2'),
+         url('../fonts/ebgaramond08-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/ebgaramond12-italic.woff2') format('woff2'),
+         url('../fonts/ebgaramond12-italic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/ebgaramond12-regular.woff2') format('woff2'),
+         url('../fonts/ebgaramond12-regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+/*
+ * MAIN
+*/
+
+html {
+	font-size: 22px;
+}
+
+body {
+	background-color: white;
+	font-family: 'EB Garamond', serif;
+	font-weight: 400;
+	line-height: 1.45;
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	color: #333;
+}
+
+p {
+	margin-bottom: 1.25em;
+}
+	p:first-child {
+		margin-top: 0;
+	}
+
+a {
+	color: #3e3579;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 2.75rem 0 1rem;
+	font-family: 'Lusitana', serif;
+	color: #3e3579;
+	font-weight: 800;
+	line-height: 1.15;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 3.052em;
+	border-bottom: 2px solid #3e3579;
+}
+
+h2 {
+	font-size: 2.441em;
+}
+
+h3 {
+
+	font-size: 1.953em;
+}
+	h3 a {
+		text-decoration: none;
+	}
+
+h4 {
+	font-size: 1.563em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+small {
+	font-size: 0.8em;
+}
+
+
+
+
+.border {
+	margin: 32px;
+	border: 2px solid rgba(0,0,0,.1);
+}
+
+header {
+	border-bottom: 2px solid rgba(0,0,0,.1);
+	padding-bottom: 2.75rem;
+}
+
+footer {
+	border-top: 2px solid rgba(0,0,0,.1);
+	padding-top: 2.75rem;
+}
+
+header,
+footer {
+	text-align: center;
+}
+
+header,
+article {
+	margin-bottom: 2.75rem;
+}
+
+main {
+	padding: 0 2rem;
+}
+
+footer {
+	margin-bottom: 1.25em;
+}
+
+article {
+	display: flex;
+	flex-flow: column;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	max-width: 600px;
+	margin: auto;
+}
+
+img {
+	max-width: 100%;
+}
+
+.rest {
+	max-height: 50px;
+}
+
+.logo {
+	margin-bottom: 2.75rem;
+	max-width: 350px;
+}
+
+.portait {
+	vertical-align: text-top;
+}
+
+.about {
+	margin-top: 2.75rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.about-item {
+	width: calc(50% - 10.6665px);
+}
+
+.portfolio {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.portfolio-item {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.953em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(50% - 10.6665px);
+	height: 400px;
+	margin-bottom: 1em;
+
+	background-color: rgba(0,0,0,.44);
+	background-blend-mode: multiply;
+	background-position: center;
+	background-size: cover;
+	text-shadow: 1px 1px 5px black;
+}
+
+
+
+a.logos-trademarks {
+	background-image: url("../images/vp_ceramics.png");
+}
+a.graphic-design {
+	background-image: url("../images/redmond_pamphlet_front.jpg");
+}
+a.photography {
+	background-image: url("../images/photography/autumn-mountains.jpg");
+}
+a.artwork {
+	background-image: url("../images/monument.jpg");
+}
+
+
+
+
+/**
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #3e3579;
+  background-color: hsla(143, 31, 66, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+
+
+/* Medium screens */
+@media all and (max-width: 888px) {
+	main {
+		padding: 0 1rem;
+	}
+	.portfolio a {
+		width: 100%;
+	}
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+	html {
+		font-size: 17px;
+	}
+	body {
+		line-height: 1.7;
+	}
+	nav {
+		max-width: 300px;
+	}
+	.logo {
+		max-width: 200px;
+	}
+	nav, .portfolio {
+		flex-direction: column;
+	}
+}
