@@ -72,8 +72,6 @@ a {
 
 h1, h2, h3, h4, h5 {
 	margin: 2.75rem 0 1rem;
-	font-family: 'Lusitana', serif;
-	color: #3e3579;
 	font-weight: 800;
 	line-height: 1.15;
 }
@@ -81,7 +79,6 @@ h1, h2, h3, h4, h5 {
 h1 {
 	margin-top: 0;
 	font-size: 3.052em;
-	border-bottom: 2px solid #3e3579;
 }
 
 h2 {
@@ -169,8 +166,8 @@ img {
 	max-width: 350px;
 }
 
-.portait {
-	vertical-align: text-top;
+.portrait {
+	
 }
 
 .about {
@@ -188,6 +185,14 @@ img {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+}
+
+.photography, .logos-trademarks {
+	text-align: center;
+}
+
+.logos-trademarks h3 {
+	text-align: left;
 }
 
 .portfolio-item {
@@ -307,12 +312,12 @@ a.artwork {
 }
 
 /* Small screens */
-@media all and (max-width: 500px) {
+@media all and (max-width: 700px) {
 	html {
-		font-size: 17px;
+		/*font-size: 17px;*/
 	}
 	body {
-		line-height: 1.7;
+		/*line-height: 1.7;*/
 	}
 	nav {
 		max-width: 300px;
@@ -320,7 +325,10 @@ a.artwork {
 	.logo {
 		max-width: 200px;
 	}
-	nav, .portfolio {
+	nav, .portfolio, .about {
 		flex-direction: column;
+	}
+	.about-item {
+		width: 100%;
 	}
 }
