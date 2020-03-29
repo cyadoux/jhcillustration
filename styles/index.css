@@ -299,6 +299,42 @@ a.artwork {
   opacity: 1;
 }
 
+.image-gallery {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+
+.image-gallery-item {
+  width: auto;
+  height: 180px;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.thumbnailfade-leave-active,
+.thumbnailfade-enter-active {
+  transition: all 0.4s ease;
+}
+
+.thumbnailfade-enter-active {
+  transition-delay: 0.4s;
+}
+
+.thumbnailfade-enter,
+.thumbnailfade-leave-to {
+  opacity: 0;
+}
+
+#filters {
+  margin: 30px auto;
+}
+
+#filters span {
+  margin: 15px;
+}
 
 
 /* Medium screens */
@@ -321,9 +357,6 @@ a.artwork {
 	}
 	nav {
 		max-width: 300px;
-	}
-	.logo {
-		max-width: 200px;
 	}
 	nav, .portfolio, .about {
 		flex-direction: column;

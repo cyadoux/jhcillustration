@@ -14,6 +14,7 @@
 
 	<link href="../styles/normalize.css" rel="stylesheet">
 	<link href="../styles/index.css" rel="stylesheet">
+	<link href="../styles/lightbox.css" rel="stylesheet">
 </head>
 <body>
 <div class="border">
@@ -35,10 +36,67 @@
 	<article id="portfolio">
 		<h1>Artwork</h1>
 		<section class="portfolio">
-			<a class="portfolio-item logos-trademarks" href="/logos-trademarks">Logos & Trademarks</a>
-			<a class="portfolio-item graphic-design" href="/graphic-design">Graphic Design</a>
-			<a class="portfolio-item photography" href="/photography">Photography</a>
-			<a class="portfolio-item artwork" href="/artwork">Artwork</a>
+			<div id="app">
+				<div id="filters">
+					<form><fieldset>
+						<legend>Filter</legend>
+						<span>
+							<input type="radio" id="all" 
+							name="filters" checked
+							v-on:click="updateFilter('all')"/>
+							<label for="all">All</label>
+						</span>
+						<span>
+							<input type="radio" id="orendao"
+							name="filters" 
+							v-on:click="updateFilter('orendao')"/>
+							<label for="orendao">Orendao</label>
+						</span>
+						<span>
+							<input type="radio" id="last-website-remastered"
+							name="filters" 
+							v-on:click="updateFilter('last-website-remastered')"/>
+							<label for="last-website-remastered">The Last Website Soundtrack - Remastered</label>
+						</span>
+						<span>
+							<input type="radio" id="andrew-wells"
+							name="filters" 
+							v-on:click="updateFilter('andrew-wells')"/>
+							<label for="andrew-wells">Andrew Wells</label>
+						</span>
+						<span>
+							<input type="radio" id="resolutiion"
+							name="filters" 
+							v-on:click="updateFilter('resolutiion')"/>
+							<label for="resolutiion">Resolutiion</label>
+						</span>
+						<span>
+							<input type="radio" id="miscellaneous" 
+							name="filters" 
+							v-on:click="updateFilter('miscellaneous')" />
+							<label for="miscellaneous">Miscellaneous</label>
+						</span>
+					</fieldset></form>
+				</div>
+
+				<transition-group name="thumbnailfade" tag="div" class="image-gallery">
+					<img class="image-gallery-item" v-for="thumb in filteredImages" 
+					:key="thumb.id" 
+					@click="showLightbox(thumb.name)"
+					:src="thumbnailDir + thumb.name"
+					:alt="thumb.alt" 
+					:title="thumb.alt" />
+				</transition-group>
+
+				<lightbox id="mylightbox" 
+				ref="lightbox"
+				:images="images"
+				:directory="thumbnailDir"
+				:filter="galleryFilter"
+				:timeoutDuration="5000"
+				/>
+			</div>
+
 		</section>
 	</article>
 	<article id="about">
@@ -55,6 +113,10 @@
 <footer>
 	<p>Copyright ©2020 JHC Illustration. All rights reserved.</p>
 </footer>
+
+<script type="text/javascript" src="../scripts/lib/vue.js"></script>
+<script type="text/javascript" src="../scripts/lib/lightbox.js"></script>
+<script type="text/javascript" src="../scripts/main.js"></script>
 </div>
 </body>
 </html>
