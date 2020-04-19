@@ -157,6 +157,14 @@ img {
 	max-width: 100%;
 }
 
+article img {
+	max-width: 49%;
+}
+
+.portrait {
+	max-width: 100%;
+}
+
 .rest {
 	max-height: 50px;
 }
@@ -164,10 +172,6 @@ img {
 .logo {
 	margin-bottom: 2.75rem;
 	max-width: 350px;
-}
-
-.portrait {
-	
 }
 
 .about {
