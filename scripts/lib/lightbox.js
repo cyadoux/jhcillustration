@@ -67,7 +67,7 @@ var Lightbox = (function (exports) {
             },
             // Used to set the duration in miliseconds of key/mouse inactivity before caption
             // and arrows disappear
-            timeoutDuration: {
+            timeout_duration: {
                 type: Number,
                 default: 3000
             }
@@ -109,7 +109,7 @@ var Lightbox = (function (exports) {
                     }
                 }
                 clearTimeout(this.timer);
-                this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeoutDuration);
+                this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeout_duration);
                 this.preloadNextImage();
             },
             hide: function hide() {
@@ -141,7 +141,7 @@ var Lightbox = (function (exports) {
                     var that = this;
                     this.controlsVisible = true;
                     clearTimeout(this.timer);
-                    this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeoutDuration);
+                    this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeout_duration);
 
                     switch (e.key) {
                         case 'ArrowRight':
@@ -169,7 +169,7 @@ var Lightbox = (function (exports) {
                     var that = this;
                     this.controlsVisible = true;
                     clearTimeout(this.timer);
-                    this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeoutDuration);
+                    this.timer = setTimeout(function() {that.controlsVisible = false;}, that.timeout_duration);
                 }
             },
             preloadNextImage: function preloadNextImage () {
