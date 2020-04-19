@@ -365,6 +365,9 @@ a.artwork {
 	nav, .portfolio, .about {
 		flex-direction: column;
 	}
+	article img {
+		max-width: 100%;
+	}
 	.about-item {
 		width: 100%;
 	}
