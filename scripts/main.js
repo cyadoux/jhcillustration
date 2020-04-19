@@ -1,9 +1,7 @@
 
-Vue.use(Lightbox);
+let photoDir = '../images/';
 
-var photoDir = '../images/';
-
-var imageList = [
+let imageList = [
 	{"name": "orendao_beast.jpg",
 	"filter": "orendao",
 	"id": "22" },
@@ -125,30 +123,35 @@ var imageList = [
 	"id": "20" }
 ];
 
-new Vue({
-	el: '#app',
-	data() {
-		return {
-			thumbnailDir: photoDir,
-			images: imageList,
-			galleryFilter: 'all'
-		}
-	},
-	methods: {
-		showLightbox: function(imageName) {
-			this.$refs.lightbox.show(imageName);
+document.addEventListener("DOMContentLoaded", function() {
+
+	let app = new Vue({
+		el: '#app',
+		data() {
+			return {
+				thumbnailDir: photoDir,
+				images: imageList,
+				galleryFilter: 'all'
+			}
 		},
-		updateFilter(filterName) {
-			this.galleryFilter = filterName;
-		}
-	},
-	computed: {
-		filteredImages: function() {
-			if (this.galleryFilter === 'all') {
-				return this.images;
-			} else {
-				return this.images.filter(image => image.filter === this.galleryFilter);
+		methods: {
+			showLightbox: function(imageName) {
+				this.$refs.lightbox.show(imageName);
+			},
+			updateFilter(filterName) {
+				this.galleryFilter = filterName;
+			}
+		},
+		computed: {
+			filteredImages: function() {
+				if (this.galleryFilter === 'all') {
+					return this.images;
+				} else {
+					return this.images.filter(image => image.filter === this.galleryFilter);
+				}
 			}
 		}
-	}
+	})
+
+	app.use(Lightbox);
 })
