@@ -358,6 +358,9 @@ a.artwork {
 	body {
 		/*line-height: 1.7;*/
 	}
+	.logo {
+		max-width: 95%;
+	}
 	nav {
 		max-width: 300px;
 	}
@@ -366,5 +369,11 @@ a.artwork {
 	}
 	.about-item {
 		width: 100%;
+	}
+}
+
+@media all and (max-width: 400px) {
+	html {
+		font-size: 100%;
 	}
 }
