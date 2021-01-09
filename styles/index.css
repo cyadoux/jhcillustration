@@ -157,10 +157,6 @@ img {
 	max-width: 100%;
 }
 
-article img {
-	max-width: 49%;
-}
-
 .portrait {
 	max-width: 100%;
 }
@@ -187,7 +183,7 @@ article img {
 
 .portfolio {
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
@@ -216,6 +212,10 @@ article img {
 	background-position: center;
 	background-size: cover;
 	text-shadow: 1px 1px 5px black;
+}
+
+img + img {
+	margin-top: 1rem;
 }
 
 
@@ -309,7 +309,6 @@ a.artwork {
 	justify-content: space-between;
 }
 
-
 .image-gallery-item {
   width: auto;
   height: 180px;
@@ -364,9 +363,6 @@ a.artwork {
 	}
 	nav, .portfolio, .about {
 		flex-direction: column;
-	}
-	article img {
-		max-width: 100%;
 	}
 	.about-item {
 		width: 100%;
