@@ -223,8 +223,8 @@ img + img {
 a.logos-trademarks {
 	background-image: url("../images/vp_ceramics.png");
 }
-a.graphic-design {
-	background-image: url("../images/redmond_pamphlet_front.jpg");
+a.book-layout {
+	background-image: url("../images/bible_02.jpg");
 }
 a.photography {
 	background-image: url("../images/photography/autumn-mountains.jpg");
@@ -374,6 +374,6 @@ a.artwork {
 
 @media all and (max-width: 400px) {
 	html {
-		font-size: 100%;
+		font-size: 100;%
 	}
 }
